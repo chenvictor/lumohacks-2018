@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
 	public void setEnabled(bool enabled) {
 		canMove = enabled;
+        if (!enabled)
+        {
+            animator.SetFloat("Speed", 0.0f);
+        }
 	}
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.

@@ -4,7 +4,9 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 0.01f;             //Floating point variable to store the player's movement speed.
+    public float Speed;             //Floating point variable to store the player's movement speed.
+
+    public Animator animator;
 
 	private bool canMove = true;
 
@@ -38,7 +40,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
+            animator.SetFloat("Speed", 0.06f);
+            Speed = 0.06f;
             moveHorizontal = 0.06f;
+        } else
+        {
+            animator.SetFloat("Speed", 0.0f);
+            Speed = 0;
         }
 
         //Use the two store floats to create a new Vector2 variable movement.

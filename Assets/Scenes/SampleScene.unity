@@ -2442,6 +2442,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1882224878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2563,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.961403, y: 4.18752}
   m_EdgeRadius: 0
+=======
+>>>>>>> parent of 22912e9... Added room 7
 --- !u!1 &1984734648
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,5 +49,6 @@ public class TextboxManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Return)) {
             curIdx += 1;
         }
+       
 	}
 }

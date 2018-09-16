@@ -13,7 +13,7 @@ public class InteractableObject : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		manager.RunFile (textFile);
+        manager.RunFile(textFile);
 	}
 	
 	// Update is called once per frame

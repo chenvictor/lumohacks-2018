@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+	private GameObject boundObj = null;
+	private Vector3 boundOffset;
+
 	private bool canMove = true;
 
     private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
@@ -26,6 +29,17 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("Speed", 0.0f);
         }
+	}
+
+	public void bindObject(GameObject obj) {
+		if (boundObj != null) {
+			//end any animations
+			boundObj.GetComponent<Animator> ().SetBool ("animate", false);
+		}
+		boundObj = obj;
+		if (boundObj != null) {
+			boundOffset = obj.transform.position - transform.position;
+		}
 	}
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -58,5 +72,13 @@ public class PlayerController : MonoBehaviour
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         rb2d.MovePosition(rb2d.position + movement);
+		if (boundObj != null) {
+			boundObj.transform.position = transform.position + boundOffset;
+			if (movement.magnitude > 0) {
+				boundObj.GetComponent<Animator> ().SetBool ("animate", true);
+			} else {
+				boundObj.GetComponent<Animator> ().SetBool ("animate", false);
+			}
+		}
     }
 }

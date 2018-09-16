@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0b50c9c9fdc744d98d0f6db9a4850c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 0}
+  textFile: {fileID: 4900000, guid: a572552233b84e943a953fb5f5dbb81d, type: 3}
   manager: {fileID: 403040529}
 --- !u!61 &416277547
 BoxCollider2D:
@@ -1670,6 +1670,7 @@ GameObject:
   - component: {fileID: 1776272903}
   - component: {fileID: 1776272905}
   - component: {fileID: 1776272904}
+  - component: {fileID: 1776272906}
   m_Layer: 0
   m_Name: old-lady-sprite-sheet_18
   m_TagString: Untagged
@@ -1754,6 +1755,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1776272906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776272902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e42973bbb0651448061469bc4e228e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
+  animator: {fileID: 0}
 --- !u!1 &1984734648
 GameObject:
   m_ObjectHideFlags: 0

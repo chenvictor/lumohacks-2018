@@ -11,16 +11,16 @@ public class TextboxManager : MonoBehaviour {
 
     public GameObject textbox;
     public Text textArea;
-    public int curIdx;
+    public int curIdx = -1;
     private int endIdx;
 
 	// Use this for initialization
 	void Start () {
         if (textFile != null) {
-            textLines = textFile.text.Split('\n');
+			textLines = textFile.text.Split('\n');
+			endIdx = textLines.Length;
         }
         curIdx = -1;
-        endIdx = textLines.Length;
 	}
 
 	public void RunFile(TextAsset file) {
@@ -31,7 +31,7 @@ public class TextboxManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (curIdx >= 0 && curIdx < endIdx)
+		if (curIdx >= 0 && curIdx < endIdx && textLines != null)
         {
 			if (controller != null) {
 				controller.setEnabled (false);
@@ -48,6 +48,9 @@ public class TextboxManager : MonoBehaviour {
   
         if (Input.GetKeyDown(KeyCode.Return)) {
             curIdx += 1;
+			if (curIdx >= endIdx) {
+				textLines = null;
+			}
         }
        
 	}

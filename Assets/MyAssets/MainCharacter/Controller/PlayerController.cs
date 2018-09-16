@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		Debug.Log ("PlayerController start");
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -45,9 +44,7 @@ public class PlayerController : MonoBehaviour
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
-		Debug.Log ("Move: " + canMove);
 		if (!canMove) {
-			Debug.Log ("eject");
 			return;
 		}
         //Store the current horizontal input in the float moveHorizontal.

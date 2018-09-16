@@ -6,19 +6,30 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 0.01f;             //Floating point variable to store the player's movement speed.
 
+	private bool canMove = true;
+
     private Rigidbody2D rb2d;       //Store a reference to the Rigidbody2D component required to use 2D Physics.
 
     // Use this for initialization
     void Start()
     {
+		Debug.Log ("PlayerController start");
         //Get and store a reference to the Rigidbody2D component so that we can access it.
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+	public void setEnabled(bool enabled) {
+		canMove = enabled;
+	}
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
+		Debug.Log ("Move: " + canMove);
+		if (!canMove) {
+			Debug.Log ("eject");
+			return;
+		}
         //Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = 0;
 
